@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="patient.js"></script>
+
+    </head>
+
+    <body>
+        <div>
+            <p>Name of patient:
+                <span id="name"></span>
+            </p>
+            <p>Organization name:
+                <span id="organization"></span>
+            </p>
+            <p>Gender:
+                <span id="gender"></span>
+            </p>
+            <p>Number of conditions they have:
+                <span id="conditions_number"></span>
+            </p>
+            <p>List of all conditions:
+                <ul>
+                    <li id="condition_1"></li>
+                    <li id="condition_2"></li>
+                    <li id="condition_3"></li>
+                </ul>
+            </p>
+        </div>
+    </body>
+
+    <script>
+        document.getElementById("name").innerHTML = patient["name"][0]["given"] + " " + patient["name"][0]["family"]
+        document.getElementById("organization").innerHTML = patient["managingOrganization"]["display"]
+        document.getElementById("gender").innerHTML = patient["gender"]
+        document.getElementById("conditions_number").innerHTML = patient["conditions"].length
+        document.getElementById("condition_1").innerHTML = patient["conditions"][0]
+        document.getElementById("condition_2").innerHTML = patient["conditions"][1]
+        document.getElementById("condition_3").innerHTML = patient["conditions"][2]
+    </script>
+</html>
